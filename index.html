@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEON SURVIVOR</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= MENU UTAMA ================= -->
+    <div id="menu" class="screen active">
+        <div class="menu-box">
+
+            <div class="mini-title">// FUTURISTIC ARCADE //</div>
+
+            <h1>
+                NEON
+                <span>SURVIVOR</span>
+            </h1>
+
+            <p class="tagline">
+                SURVIVE • COLLECT • LEVEL UP
+            </p>
+
+            <button onclick="startGame()" class="btn main-btn">
+                PLAY GAME
+            </button>
+
+            <button onclick="showHowToPlay()" class="btn">
+                HOW TO PLAY
+            </button>
+
+            <button onclick="exitGame()" class="btn">
+                EXIT
+            </button>
+
+            <div class="highscore">
+                HIGH SCORE:
+                <span id="menuHighScore">0</span>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ================= HOW TO PLAY ================= -->
+    <div id="howToPlay" class="screen">
+
+        <div class="info-box">
+
+            <h2>HOW TO PLAY</h2>
+
+            <div class="rules">
+
+                <p>
+                    🎮 <b>W A S D</b> atau <b>ARROW KEYS</b>
+                    untuk menggerakkan pemain.
+                </p>
+
+                <p>
+                    🟡 Ambil koin untuk mendapatkan
+                    <b>+10 SCORE</b>.
+                </p>
+
+                <p>
+                    🔴 Hindari musuh yang mengejar kamu.
+                </p>
+
+                <p>
+                    ❤️ Kamu mempunyai <b>3 HP</b>.
+                </p>
+
+                <p>
+                    ⚡ Setiap level, musuh akan menjadi
+                    lebih cepat.
+                </p>
+
+                <p>
+                    ⏸️ Tekan <b>ESC</b> untuk pause.
+                </p>
+
+            </div>
+
+            <button onclick="backToMenu()" class="btn main-btn">
+                BACK TO MENU
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= GAME ================= -->
+    <div id="game" class="screen game-screen">
+
+        <!-- HUD -->
+        <div class="hud">
+
+            <div class="hud-item">
+                <small>LEVEL</small>
+                <strong id="level">1</strong>
+            </div>
+
+            <div class="hud-item">
+                <small>HP</small>
+                <strong id="hp">3</strong>
+            </div>
+
+            <div class="hud-item">
+                <small>SCORE</small>
+                <strong id="score">0</strong>
+            </div>
+
+            <div class="hud-item">
+                <small>TIME</small>
+                <strong id="time">0</strong>
+            </div>
+
+            <button onclick="togglePause()" class="pause-button">
+                II
+            </button>
+
+        </div>
+
+
+        <!-- CANVAS GAME -->
+        <div class="game-container">
+
+            <canvas
+                id="gameCanvas"
+                width="900"
+                height="560">
+            </canvas>
+
+            <!-- PAUSE -->
+            <div id="pauseScreen" class="pause-screen">
+
+                <h2>PAUSED</h2>
+
+                <p>
+                    Game sedang dijeda
+                </p>
+
+                <button onclick="togglePause()" class="btn main-btn">
+                    RESUME
+                </button>
+
+                <button onclick="backToMenu()" class="btn">
+                    MAIN MENU
+                </button>
+
+            </div>
+
+            <!-- LEVEL MESSAGE -->
+            <div id="levelMessage" class="level-message">
+                LEVEL UP!
+            </div>
+
+        </div>
+
+        <div class="controls">
+            WASD / ARROW KEYS = MOVE
+            &nbsp; • &nbsp;
+            ESC = PAUSE
+        </div>
+
+    </div>
+
+
+    <!-- ================= GAME OVER ================= -->
+    <div id="gameOver" class="screen">
+
+        <div class="menu-box">
+
+            <div class="mini-title">
+                // SYSTEM FAILURE //
+            </div>
+
+            <h1>
+                GAME
+                <span>OVER</span>
+            </h1>
+
+            <p class="final-score">
+                FINAL SCORE:
+                <strong id="finalScore">0</strong>
+            </p>
+
+            <div class="highscore">
+                HIGH SCORE:
+                <span id="finalHighScore">0</span>
+            </div>
+
+            <button onclick="startGame()" class="btn main-btn">
+                PLAY AGAIN
+            </button>
+
+            <button onclick="backToMenu()" class="btn">
+                MAIN MENU
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
